@@ -31,6 +31,22 @@
 / {
     combos { compatible = "zmk,combos"; };
 
+    macros {
+        WinShiftLeft: WinShiftLeft {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI &kp LEFT_SHIFT &kp LEFT_ARROW>;
+            label = "WINSHIFTLEFT";
+        };
+
+        WinShiftRight: WinShiftRight {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI &kp LEFT_SHIFT &kp RIGHT_ARROW>;
+            label = "WINSHIFTRIGHT";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -68,10 +84,10 @@
 
         L1 {
             bindings = <
-        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+           &kp NUMBER_1   &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4   &kp NUMBER_5      &kp NUMBER_6  &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9     &kp NUMBER_0
+           &kp RA(Q)      &kp RA(E)     &trans        &trans         &trans            &trans        &trans          &kp UP_ARROW    &trans           &trans
+&kp TILDE  &kp BACKSLASH  &trans        &trans        &WinShiftLeft  &WinShiftRight    &trans        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans        &trans
+                                        &trans        &trans         &trans            &trans        &trans          &trans
             >;
         };
 
